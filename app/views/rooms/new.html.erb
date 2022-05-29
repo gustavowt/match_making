@@ -1,0 +1,11 @@
+<% content_for(:page_title) do %>
+  <%= Room.model_name.human %>
+<% end %>
+
+<%= render "form", room: @room %>
+
+<br>
+
+<div>
+  <%= link_to "Back to rooms", rooms_path %>
+</div>

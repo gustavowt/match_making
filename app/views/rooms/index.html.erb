@@ -1,0 +1,17 @@
+<% content_for(:page_title) do %>
+  <%= Room.model_name.human(count: :many) %>
+<% end %>
+<p style="color: green"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<div id="rooms">
+  <% @rooms.each do |room| %>
+    <%= render room %>
+    <p>
+      <%= link_to "Show this room", room %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New room", new_room_path, class: 'px-6 py-2 rounded bg-slate-400 hover:bg-slate-500 text-slate-100' %>
