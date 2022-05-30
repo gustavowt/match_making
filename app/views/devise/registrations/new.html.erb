@@ -1,23 +1,35 @@
 <% content_for(:form_title) do %>
   Sign up
 <% end %>
-
+j
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="mt-6">
-      <%= f.label :email, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200' %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'lock w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
+    <%= f.label :email, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'lock w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
+  </div>
+
+  <%= fields_for :profile do |fp| %>
+    <div class="mt-6">
+      <%= fp.label :first_name, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200' %>
+      <%= fp.text_field :first_name, autofocus: true, autocomplete: "email", class: 'lock w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
+    </div>
+
+    <div class="mt-6">
+      <%= fp.label :last_name, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200' %>
+      <%= fp.text_field :last_name, autofocus: true, autocomplete: "email", class: 'lock w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
+    </div>
+  <% end %>
+
+  <div class="mt-6">
+    <%= f.label :password, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200'  %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
   </div>
 
   <div class="mt-6">
-      <%= f.label :password, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200'  %>
-      <%= f.password_field :password, autocomplete: "new-password", class: 'block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
-  </div>
-
-  <div class="mt-6">
-      <%= f.label :password_confirmation, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200'  %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
+    <%= f.label :password_confirmation, class: 'block mb-2 text-sm text-gray-600 dark:text-gray-200'  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40' %>
   </div>
 
   <div class="mt-6">
@@ -25,4 +37,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
