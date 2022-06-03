@@ -90,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_29_230526) do
     t.bigint "game_id", null: false
     t.bigint "user_id", null: false
     t.string "status"
-    t.string "visisbility"
+    t.string "visibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_rooms_on_game_id"

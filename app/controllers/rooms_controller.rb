@@ -11,11 +11,11 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_parameters)
+    @room = current_user.rooms.build(room_parameters)
 
     @room.save
 
-    respond_with(@roow)
+    respond_with(@roow, location: rooms_path)
   end
 
   def edit; end
@@ -29,10 +29,10 @@ class RoomsController < ApplicationController
   private
 
   def room_parameters
-    params.require(:room).permit(:game_id, :visibility)
+    params.require(:room).permit(:game_id, :visibility, :status)
   end
 
   def load_room
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
   end
 end

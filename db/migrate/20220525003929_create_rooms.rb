@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.references :game, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.string :status
-      t.string :visisbility
+      t.string :visibility
 
       t.timestamps
     end

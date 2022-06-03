@@ -1,17 +1,17 @@
+<%= turbo_stream_from 'rooms' %>
+
 <% content_for(:page_title) do %>
   <%= Room.model_name.human(count: :many) %>
+
 <% end %>
-<p style="color: green"><%= notice %></p>
 
-<h1>Rooms</h1>
-
-<div id="rooms">
-  <% @rooms.each do |room| %>
-    <%= render room %>
-    <p>
-      <%= link_to "Show this room", room %>
-    </p>
-  <% end %>
+<div class="px-6 py-4 my-3 mx-auto flex items-center">
+  <div class="w-full text-right mx-auto">
+    <%= link_to t('buttons.new_female', resource: Room.model_name.human, count: 1), new_room_path, class: 'border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline' %>
+  </div>
 </div>
 
-<%= link_to "New room", new_room_path, class: 'px-6 py-2 rounded bg-slate-400 hover:bg-slate-500 text-slate-100' %>
+<div id='rooms' class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+  <%= render @rooms %>
+</div>
+
