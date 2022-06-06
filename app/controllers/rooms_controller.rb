@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   before_action :load_room, only: %i[edit update show]
   def index
-    @rooms = Room.includes(:game).all
+    @rooms = Room.includes(players: { user: :profile }).all
   end
 
   def new
