@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_29_230526) do
     t.text "description"
     t.string "game_type"
     t.integer "game_id"
+    t.integer "team_size", null: false
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

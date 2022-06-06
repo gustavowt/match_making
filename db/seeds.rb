@@ -15,7 +15,12 @@ user = User.create(
     last_name: 'Teixeira'
   }
 )
-game = Game.create(name: 'Counter Strike', description: 'FPS game', game_type: 'fps')
+game = Game.create(
+  name: 'Counter Strike',
+  description: 'FPS game',
+  game_type: 'fps',
+  team_size: 5
+)
 
 rooms = Room.create(
   [
