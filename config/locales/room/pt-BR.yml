@@ -1,4 +1,8 @@
 pt-BR:
+  rooms:
+    room:
+      title: Time %{owner}
+
   activerecord:
     models:
       room:

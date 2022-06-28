@@ -1,5 +1,8 @@
 pt-BR:
   buttons:
+    full_room: 'Lotado'
+    enter_room: 'Entrar'
+    leave_room: 'Sair'
     new_female:
       one: 'Nova %{resource}'
       other: 'Novas %{resource}'

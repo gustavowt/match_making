@@ -1,0 +1,12 @@
+<div class="grid grid-cols-1 mt-5" id="<%= dom_id(room, :enter) %>">
+  <div class="flex items-center">
+    <% case %>
+    <% when display_enter? %>
+      <%= link_to t('buttons.enter_room'), room_players_path(room), data: { 'turbo-method': :post }, class: 'text-center border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline w-full' %>
+    <% when display_full? %>
+      <%= button_tag t('buttons.full_room'), disabled: true, class: 'border border-gray-200 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline w-full' %>
+    <% when display_leave? %>
+      <%= link_to t('buttons.leave_room'), room_players_path(room), data: { 'turbo-method': :delete }, class: 'text-center border border-red-500 bg-red-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline w-full' %>
+    <% end %>
+  </div>
+</div>
