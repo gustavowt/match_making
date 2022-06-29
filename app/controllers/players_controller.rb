@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   before_action :load_room
 
   def create
-    @player = @room.players.where(user: current_user).first_or_create
+    @player = @room.players.build(user: current_user)
 
     respond_to do |format|
       format.turbo_stream

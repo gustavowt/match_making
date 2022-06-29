@@ -8,5 +8,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_index :rooms, :user_id, unique: true, where: %(status = 'active'), name: 'idx_user_when_active_rooms'
   end
 end

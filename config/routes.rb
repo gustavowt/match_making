@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resource :players
   end
 
+  resource :challenges
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }

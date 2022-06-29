@@ -52,6 +52,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'image_processing', '~> 1.2'
 
+gem 'enumerate_it'
 gem 'view_component'
 
 group :development, :test do

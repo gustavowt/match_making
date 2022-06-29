@@ -123,6 +123,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_014050) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_rooms_on_game_id"
+    t.index ["user_id"], name: "idx_user_when_active_rooms", unique: true, where: "((status)::text = 'active'::text)"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
