@@ -34,7 +34,7 @@
 
       <%= turbo_stream_from dom_id(room, :players) %>
 
-      <div class="grid grid-cols-5 mt-10">
+      <div class="grid grid-cols-5 mt-5">
         <div class="flex items-center" id="<%= dom_id(room, :players) %>">
           <%= render room.players %>
         </div>
