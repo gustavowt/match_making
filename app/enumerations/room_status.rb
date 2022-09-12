@@ -2,6 +2,7 @@
 
 class RoomStatus < EnumerateIt::Base
   associate_values(
+    :open,
     :closed,
     :ready
   )

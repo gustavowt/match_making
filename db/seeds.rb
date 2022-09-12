@@ -77,18 +77,18 @@ game = Game.create(
   team_size: 5
 )
 
-rooms = Room.create(
+Room.create(
   [
     {
       user_id: gustavo.id,
       game_id: game.id,
-      status: 'open',
+      status: RoomStatus::OPEN,
       visibility: 'public'
     },
     {
       user_id: ozzy.id,
       game_id: game.id,
-      status: 'open',
+      status: RoomStatus::OPEN,
       visibility: 'restrict'
     }
   ]

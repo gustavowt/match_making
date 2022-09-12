@@ -9,4 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   accepts_nested_attributes_for :profile
+
+  def current_room
+    rooms.ready.take
+  end
 end

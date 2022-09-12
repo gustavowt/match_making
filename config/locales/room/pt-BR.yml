@@ -1,7 +1,10 @@
 pt-BR:
   rooms:
-    room:
+    room: &room
       title: Time %{owner}
+  challenges:
+    challenge:
+      <<: *room
 
   activerecord:
     models:

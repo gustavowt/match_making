@@ -1,0 +1,10 @@
+<%= turbo_stream_from 'challenges' %>
+
+<% content_for(:page_title) do %>
+  <%= Challenge.model_name.human(count: :many) %>
+<% end %>
+
+<div id='challenges' class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+  <%= render partial: 'challenge', collection: @rooms, as: 'room' %>
+</div>
+

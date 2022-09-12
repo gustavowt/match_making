@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    models:
+      challenge:
+        one: Desafio
+        other: Desafios

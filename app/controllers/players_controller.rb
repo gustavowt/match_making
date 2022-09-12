@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 
 class PlayersController < ApplicationController
+  respond_to :html
   before_action :load_room
 
   def create
     @player = @room.players.build(user: current_user)
 
-    respond_to do |format|
-      format.turbo_stream
-    end
+    @player.save
+
+    respond_with(@player, location: challenges_path)
   end
 
   def destroy
-    @room.players.find_by(user_id: current_user.id).destroy
+    @player = @room.players.find_by(user_id: current_user.id)
 
-    respond_to do |format|
-      format.turbo_stream
-    end
+    @player.destroy
+
+    respond_with(@player, location: rooms_path)
   end
 
   private
